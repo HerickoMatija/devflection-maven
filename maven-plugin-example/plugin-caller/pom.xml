@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.devflection</groupId>
+    <artifactId>plugin-caller-example</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+	<!-- needed to call our plugin from the command line --> 
+	<!-- 
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.devflection.plugin</groupId>
+				<artifactId>hello-world-maven-plugin</artifactId>
+				<version>1.0-SNAPSHOT</version>      
+			</plugin>
+		</plugins>
+	</build>
+	-->
+	
+	<!-- needed if we want to configure a message and call from the command line --> 
+	<!--
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.devflection.plugin</groupId>
+				<artifactId>hello-world-maven-plugin</artifactId>
+				<version>1.0-SNAPSHOT</version>
+				<configuration>
+					<message>Three little birds \npitch by my doorstep \nsingin' sweet songs \nof melodies pure and true \nsayin', this is my message to you</message>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	-->
+	
+	<!-- we are binding the plugin to compile phase --> 	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.devflection.plugin</groupId>
+				<artifactId>hello-world-maven-plugin</artifactId>
+				<version>1.0-SNAPSHOT</version>
+				<configuration>
+					<message>
+						Three little birds
+						pitch by my doorstep 
+						singin' sweet songs 
+						of melodies pure and true 
+						sayin', this is my message to you
+					</message>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>compile</phase>
+						<goals>
+							<goal>helloworld</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>	
+	
+</project>
