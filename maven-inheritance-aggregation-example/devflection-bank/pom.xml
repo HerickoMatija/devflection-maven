@@ -17,7 +17,7 @@
 
 	<properties>        
 		<apache.commons.lang3.version>3.9</apache.commons.lang3.version>
-		<junit.version>4.11</junit.version>
+		<junit.version>4.13.1</junit.version>
 	</properties>
 
     <dependencyManagement>
